@@ -15,20 +15,23 @@ export const Carousel = ({ banners }: { banners: BannerProps[] }) => {
                             href={b.url}
                             className="carousel-item w-full"
                         >
+
                             <Image
                                 src={b.image}
                                 width={0}
                                 height={0}
                                 priority={true}
                                 sizes="100vh"
-                                className="w-full object-scale-down bg-base-300"
-                                alt={b.alt} />
+                                className={`w-full object-scale-down`}
+                                alt={b.alt}
+                                style={{ background: `${b.backgroundColor}` }}
+                            />
                         </Link>
                     )
                 )
                 )
             }
-        </div>
+        </div >
     );
 }
 

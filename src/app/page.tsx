@@ -1,26 +1,29 @@
 "use client"
 
 import { useEffect, useState } from "react";
-
 import Carousel from "./components/Carousel";
-
-import { BannerProps, PromocodeProps, SiteProps } from "./types";
+import Sites from "./components/Sites";
+import PromoCodes from "./components/PromoCodes";
 
 const Home = () => {
 
-  const [banners, setData] = useState(null);
+  const [banners, setBanner] = useState(null);
+  const [marketplaces, setMarketplace] = useState(null);
+  const [delivery, setDelivery] = useState(null);
+  const [promocodes, setPromocodes] = useState(null);
+
   const sheetID = process.env.NEXT_PUBLIC_SHEET_ID
-  console.log(sheetID);
 
   useEffect(() => {
-    const fetchData = async () => {
-      const sheetName = "banners";
-      const response = await fetch(`https://script.google.com/macros/s/${sheetID}/exec?sheet=${sheetName}`);
-      const banners = await response.json();
-      setData(banners);
+    let fetchData = async (sheetName: string, setBanner: Function) => {
+      let response = await fetch(`https://script.google.com/macros/s/${sheetID}/exec?sheet=${sheetName}`);
+      setBanner(await response.json())
     };
 
-    fetchData();
+    fetchData("banners", setBanner);
+    fetchData("marketplaces", setMarketplace);
+    fetchData("delivery", setDelivery);
+    fetchData("promocodes", setPromocodes);
   }, [sheetID]);
 
   return (
@@ -30,15 +33,16 @@ const Home = () => {
         <Carousel banners={banners} />
       }
 
-
-
-
-      {/* <Sites
-        marketplaces={marketplaces}
-        delivery={delivery}
-      />
-
-      <PromoCodes promocodes={promocodes} /> */}
+      {
+        marketplaces && delivery &&
+        <Sites
+          marketplaces={marketplaces}
+          delivery={delivery}
+        />
+      }
+      {promocodes &&
+        <PromoCodes promocodes={promocodes} />
+      }
 
     </main>
   );

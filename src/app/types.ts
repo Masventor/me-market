@@ -3,6 +3,7 @@ export interface BannerProps {
     alt: string;
     url: string;
     image: string;
+    backgroundColor: string;
     visible: boolean;
 }
 
