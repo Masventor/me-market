@@ -8,8 +8,8 @@ const Sites = ({
     marketplaces,
     delivery
 }: {
-    marketplaces: SiteProps[],
-    delivery: SiteProps[]
+    marketplaces: null | SiteProps[],
+    delivery: null | SiteProps[]
 }) => {
 
 
@@ -33,7 +33,7 @@ const Sites = ({
                 allData.map((line) =>
                     <div key={line.id} className="w-full mt-10">
                         <HeaderRow>{line.title}</HeaderRow>
-                        <div className="flex overflow-x-auto hide-scrollbar rounded-3xl whitespace-nowrap space-x-6  w-full max-w-full">
+                        <div className="flex overflow-x-auto hide-scrollbar rounded-xl whitespace-nowrap space-x-6  w-full max-w-full">
                             {
                                 line.sites && line.sites.map((s) =>
                                     <SiteCard
