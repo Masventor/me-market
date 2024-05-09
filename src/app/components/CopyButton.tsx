@@ -18,12 +18,13 @@ const CopyButton = ({ text }: Props) => {
 
     return (
         <button
-            className="btn bg-base-200 w-full py-2 px-3 rounded-lg text-left block"
+            className="btn bg-base-200 w-full p-3 rounded-lg text-left block"
             onClick={() => {
                 copyText(text);
             }}
-        >
-            {text}
+        ><span className='font-mono inline-block mt-1 mx-2'>
+                {text}
+            </span>
             {copied ? (
                 <div className="badge badge-success badge-outline float-right">Copied</div>
             ) : (
