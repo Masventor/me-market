@@ -5,20 +5,10 @@ const nextConfig = {
     images: {
         remotePatterns: [
             {
-                hostname: 'mdbcdn.b-cdn.net',
+                protocol: "https",
+                hostname: "*"
             },
-            {
-                hostname: 'img.daisyui.com',
-            },
-            {
-                hostname: 'is1-ssl.mzstatic.com',
-            },
-            {
-                hostname: 'static.rustore.ru',
-            },
-            {
-                hostname: 'main-cdn.sbermegamarket.ru'
-            }
+
         ],
     },
 };

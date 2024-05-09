@@ -25,9 +25,9 @@ const CopyButton = ({ text }: Props) => {
         >
             {text}
             {copied ? (
-                <div className="badge badge-primary badge-outline float-right">Copied</div>
+                <div className="badge badge-success badge-outline float-right">Copied</div>
             ) : (
-                <div className="badge badge-primary float-end">Copy</div>
+                <div className="badge badge-neutral float-end">Copy</div>
             )}
         </button>
     );

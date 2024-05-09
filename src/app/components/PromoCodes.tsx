@@ -25,7 +25,7 @@ const PromoCodes = ({ promocodes }: { promocodes: PromocodeProps[] }) => {
     };
 
     return (
-        <div className="w-full mt-10">
+        <div className="w-full mt-8">
             <HeaderRow>Promo</HeaderRow>
             <div className="space-y-6 w-full">
                 {

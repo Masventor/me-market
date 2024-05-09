@@ -27,7 +27,7 @@ const Home = () => {
   }, [sheetID]);
 
   return (
-    <main className="flex min-h-screen max-w-lg mx-auto flex-col items-center justify-between p-8">
+    <main className="flex min-h-screen max-w-lg mx-auto flex-col items-center justify-between p-4">
 
       {
         (banners) ?
@@ -46,8 +46,8 @@ const Home = () => {
             delivery={delivery}
           />
           :
-          <div className="w-full mt-10">
-            <div className="skeleton w-4/12 h-6 font-bold mb-6"></div>
+          <div className="w-full mt-8">
+            <div className="skeleton w-4/12 h-6 font-bold mb-4"></div>
 
             <div className="flex overflow-x-auto whitespace-nowrap space-x-6 min-w-full hide-scrollbar w-full max-w-full">
               <div
@@ -68,8 +68,8 @@ const Home = () => {
           ?
           <PromoCodes promocodes={promocodes} />
           :
-          <div className="w-full mt-10">
-            <div className="skeleton w-4/12 h-6 font-bold mb-6"></div>
+          <div className="w-full mt-6">
+            <div className="skeleton w-4/12 h-6 font-bold mb-4"></div>
             <div className="space-y-6 w-full">
 
               <div className="w-full">
