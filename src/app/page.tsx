@@ -12,7 +12,7 @@ const Home = () => {
   const [delivery, setDelivery] = useState(null);
   const [promocodes, setPromocodes] = useState(null);
 
-  const sheetID = process.env.NEXT_PUBLIC_SHEET_ID
+  const sheetID = "AKfycbzKL1zEa7ZcpZ_GHfqbf45tjiQQ5qdwotyLg0YpUFA3Z6Q4uUrqOkXEwPOaRDkMLyD-rQ"
 
   useEffect(() => {
     let fetchData = async (sheetName: string, setBanner: Function) => {
