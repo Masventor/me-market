@@ -19,6 +19,7 @@ export const Carousel = ({ banners }: { banners: BannerProps[] }) => {
                                 src={b.image}
                                 width={0}
                                 height={0}
+                                priority={true}
                                 sizes="100vh"
                                 className="w-full object-scale-down bg-base-300"
                                 alt={b.alt} />
